@@ -30,7 +30,7 @@ const Sidebar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="bg-[#F9FAFB] py-4 text-gray-800 flex justify-center align-center text-center">
+    <div className="py-4 text-primary flex justify-center align-center text-center">
       <nav className="mb-6 flex gap-8 overflow-x-auto lg:overflow-x-hidden">
         {navItems.map((item) => (
           <button
@@ -38,12 +38,12 @@ const Sidebar = () => {
             onClick={() => navigate(item.path)}
             className={`flex h-[118px] w-[120px] flex-shrink-0 flex-col items-center justify-center gap-[14px] rounded-[12px] px-2 py-4 text-center transition-all duration-200 sm:w-32 ${
               isActive(item.path)
-                ? "border border-[rgba(234,125,0,0.5)] bg-white text-black"
-                : "bg-white text-gray-800 hover:bg-gray-100"
+                ? "border border-[rgba(234,125,0,0.5)] bg-white text-primary"
+                : "bg-white text-primary hover:bg-gray-100"
             }`}
           >
             <img src={item.icon} alt={item.name} className="mb-1 h-6 w-6" />
-            <span className="text-xs font-medium">{item.name}</span>
+            <span className="text-xs poppins-medium">{item.name}</span>
           </button>
         ))}
       </nav>

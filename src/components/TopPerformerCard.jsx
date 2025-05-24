@@ -9,15 +9,15 @@ const TopPerformerCard = ({ image, title, amount, subtext, styles, MainHeading }
         >
             <div className="text-center md:text-left">
                 <div className="mb-3">
-                    <span className="text-sm font-semibold text-[#151D48] md:text-base">
+                    <span className="text-sm poppins-semibold text-primary md:text-base">
                         {MainHeading}
                     </span>
                     <CardHeading title={title} />
                 </div>
-                <h1 className="text-2xl font-bold text-[#151D48] md:text-3xl">
+                <h1 className="text-2xl poppins-bold text-primary md:text-3xl">
                     {amount}
                 </h1>
-                <h6 className="text-sm font-normal text-[#151D48] md:text-base">
+                <h6 className="text-sm poppins-regular text-primary md:text-base">
                     {subtext}
                 </h6>
             </div>

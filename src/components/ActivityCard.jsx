@@ -1,12 +1,11 @@
 import React from "react";
 import profile from "../assets/images/Profile.png";
+import MainHeading from "./MainHeading";
 
 const ActivityCard = () => {
     return (
         <div className="bg-white h-[450px] rounded-lg p-4 sm:p-6 flex flex-col">
-            <h3 className="text-[18px] sm:text-[20px] font-bold text-[#151D48] mb-4">
-                Recent Activities
-            </h3>
+            <MainHeading heading={"Recent Activity"} />
 
             {/* Scrollable area */}
             <div className="flex-1 overflow-y-auto pr-2">

@@ -1,10 +1,10 @@
 import React from "react";
 
-const CardHeading = ({ title, color = "#1F2937", fontSize = "24px" }) => {
+const CardHeading = ({ title, color = "#000", fontSize = "24px", className = "" }) => {
     return (
         <h1
-            style={{ color: color, fontSize: fontSize, fontWeight: "600" }}
-            className="font-poppins leading-[36px]"
+            className={`poppins-semibold font-semibold leading-[36px] ${className}`}
+            style={{ color, fontSize }}
         >
             {title}
         </h1>

@@ -16,9 +16,7 @@ const layout = () => {
                     <Outlet />
                 </Wrapper>
                 <Footer />
-                {/* <div className='h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden p-6'>
-                
-            </div> */}
+                {/* <div className='h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden p-6'>*/}
             </div>
         </div>
     );

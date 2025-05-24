@@ -8,6 +8,11 @@ import SalesCard from "../../components/SalesCard";
 import TopPerformerCard from "../../components/TopPerformerCard";
 import ActivityCard from "../../components/ActivityCard";
 import ActivityTab from "../../components/ActivityTab";
+import SalesTrendsChart from "../../components/SalesTrendsChart";
+import calender from "../../assets/images/icons/calender.svg";
+import refresh from "../../assets/images/icons/refresh.svg";
+import OutlineBtn from "../../components/Buttons/OutlineBtn";
+import cloud from "../../assets/images/icons/cloud.svg";
 
 const page = () => {
     const lineData = [
@@ -29,6 +34,25 @@ const page = () => {
 
     return (
         <>
+            <div className="margin flex flex-row gap-4 max-sm:flex-col md:flex-row">
+                <button className="poppins-medium text-secondary flex h-9 items-center gap-2 rounded-md bg-[#F8EDE2] px-6 text-[14px] transition hover:bg-gray-100 max-sm:min-w-[86px] sm:h-10 sm:min-w-[102px] sm:text-base">
+                    <img
+                        src={calender}
+                        alt="icon"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                    />
+                    Select Date Range
+                </button>
+                <OutlineBtn
+                    className="poppins-medium text-secondary flex h-9 items-center gap-2 rounded-md border border-[#EA7D00] px-3 text-[14px] transition hover:bg-gray-100 max-sm:min-w-[86px] sm:h-10 sm:min-w-[102px] sm:text-base"
+                    BtnName="Refresh"
+                    iconSrc={refresh}
+                />{" "}
+                <OutlineBtn
+                    BtnName="Filter"
+                    iconSrc={cloud}
+                />
+            </div>
             <div className="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2">
                 <TopPerformerCard
                     MainHeading={"Top Performer Today!"}
@@ -95,12 +119,12 @@ const page = () => {
 
             <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="flex h-[450px] flex-col rounded-lg bg-[#F9F9FF] sm:p-6">
-                    <div className="mb-4 flex flex-col gap-2 max-sm:flex-row justify-between sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mb-4 flex flex-col justify-between gap-2 max-sm:flex-row sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex items-center gap-2">
                             <h3 className={`text-[16px] font-medium text-[#737791] sm:text-[16px]`}>Activity Feed</h3>
                         </div>
                         <div>
-                            <span className={`cursor-pointer text-[14px] hover:underline sm:text-[16px] text-[#EA7D00]`}>View All</span>
+                            <span className={`cursor-pointer text-[14px] text-[#EA7D00] hover:underline sm:text-[16px]`}>View All</span>
                         </div>
                     </div>
 
@@ -120,10 +144,15 @@ const page = () => {
                                     </div>
                                 </div>
 
-                                <p className="text-[16px] font-regular text-[#737791] sm:text-base">A new joined customer placed a new order (#348798343).</p>
+                                <p className="font-regular text-[16px] text-[#737791] sm:text-base">
+                                    A new joined customer placed a new order (#348798343).
+                                </p>
                             </div>
                         ))}
                     </div>
+                </div>
+                <div>
+                    <SalesTrendsChart />
                 </div>
             </div>
 
@@ -167,24 +196,6 @@ const page = () => {
                             />
                         </BarChart>
                     </ResponsiveContainer>
-                </div>
-            </div>
-
-            {/* Activity and Suggestions */}
-            <div className="grid gap-6 md:grid-cols-2">
-                <div className="rounded-lg bg-white p-4 shadow">
-                    <h3 className="mb-2 font-semibold">Recent Activities</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li>John Doe updated stock for Product X.</li>
-                        <li>Sumit Mishra added a new order.</li>
-                    </ul>
-                </div>
-                <div className="rounded-lg bg-white p-4 shadow">
-                    <h3 className="mb-2 font-semibold">AI Powered Suggestions</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li>Orders are piling up; complete processing today to maintain efficiency.</li>
-                        <li>Check delayed shipments with high priority.</li>
-                    </ul>
                 </div>
             </div>
         </>
